@@ -1,0 +1,47 @@
+.footer {
+  padding: 20px 0;
+  color: #5f5e5e;
+  text-align: center; /* Center text for better appearance */
+}
+
+.container {
+  max-width: 1000px;
+  margin: 10px auto;
+  padding: 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Ensure responsiveness */
+}
+
+.doctor-info,
+.about {
+  flex: 1;
+  margin-bottom: 20px; /* Add spacing for better readability on smaller screens */
+}
+
+.about {
+  margin-left: 20px; /* Adjust spacing between sections */
+}
+
+.doctor-info h4,
+.about h4 {
+  margin-bottom: 10px;
+}
+
+.doctor-info p,
+.about p {
+  margin-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column; /* Stack sections vertically on smaller screens */
+    align-items: center;
+  }
+  .about {
+    margin-left: 0; /* Remove left margin on smaller screens */
+  }
+}

@@ -1,0 +1,183 @@
+/* src/Home.css */
+.home-container {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.home-header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.home-header h1 {
+  color: #ffffff;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.image-slider-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  height: 300px; /* Set a fixed height to prevent content shifting */
+  position: relative; /* Ensures images are positioned correctly */
+}
+
+.image-slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%; /* Ensure the slider takes full width */
+}
+
+.slider-image {
+  width: 300px; /* Size for images */
+  height: 200px;
+  transition: all 0.3s ease-in-out;
+  filter: blur(4px); /* Initial blur effect */
+  opacity: 0.5; /* Make inactive images semi-transparent */
+}
+
+.slider-image.active {
+  filter: blur(0); /* Remove blur for active image */
+  opacity: 1; /* Full opacity for the active image */
+  z-index: 2; /* Bring the active image to the front */
+}
+
+.slider-image.inactive {
+  z-index: 1; /* Ensure inactive images are below the active image */
+}
+
+.slider-image:nth-child(1).inactive {
+  transform: translateX(-100px); /* Position for the first inactive image */
+}
+
+.slider-image:nth-child(2).inactive {
+  transform: translateX(100px); /* Position for the second inactive image */
+}
+
+.home-main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-section {
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  max-width: 700px;
+  margin: 0 auto; /* Center align the contact section */
+}
+
+.contact-section h2 {
+  color: #ffffff;
+}
+
+.contact-section a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.contact-section a:hover {
+  text-decoration: underline;
+}
+
+.division-container {
+  display: flex;
+  flex-direction: column; /* Stack divisions vertically on small screens */
+  justify-content: space-between;
+  margin-bottom: 20px;
+  margin: 8px;
+  padding: 8px;
+}
+
+.division {
+  flex: 1;
+  margin-bottom: 10px; /* Add margin below each division */
+  padding: 10px;
+}
+
+.label {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.input,
+select {
+  width: 100%; /* Make input and select elements full width */
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+}
+
+.button-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically on small screens */
+  align-items: center;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 10px; /* Add margin below each button */
+  font-size: 1rem;
+  border-radius: 4px;
+  width: 80%; /* Make buttons full width */
+  max-width: 300px; /* Limit the maximum width */
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+.profile-pic-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.profile-pic {
+  width: 120px; /* Adjust the width as needed */
+  height: 120px; /* Adjust the height as needed */
+  border-radius: 50%; /* Make the image round */
+  object-fit: cover; /* Ensure the image covers the container */
+  border: 2px solid #000000; /* Optional: Add a border */
+}
+
+/* Media Queries for responsive design */
+@media (max-width: 768px) {
+  .image-slider-container {
+      height: auto; /* Adjust height for smaller screens */
+  }
+
+  .slider-image {
+      width: 100%; /* Make images take full width */
+      height: auto; /* Adjust height automatically */
+  }
+
+  .contact-section {
+      padding: 10px; /* Adjust padding for smaller screens */
+      margin-left: 0; /* Remove left margin */
+  }
+
+  .button {
+      margin-left: 0; /* Remove left margin */
+      width: 100%; /* Make buttons full width */
+  }
+
+  .profile-pic-container {
+      margin-left: 0; /* Remove left margin */
+  }
+}
